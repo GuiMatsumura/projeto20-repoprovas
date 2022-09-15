@@ -1,6 +1,14 @@
 import { ISingUphUser, User } from '../types/userType';
-import { findUserByEmail, insertUser } from '../repositories/userRepository';
-import { conflictError, unauthorizedError } from '../utils/errorUtils';
+import {
+  findUserByEmail,
+  insertUser,
+  findById,
+} from '../repositories/userRepository';
+import {
+  conflictError,
+  unauthorizedError,
+  notFoundError,
+} from '../utils/errorUtils';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
@@ -30,5 +38,12 @@ async function getUserOrFail(login: User) {
 
   const isPasswordValid = bcrypt.compareSync(login.password, user.password);
   if (!isPasswordValid) throw unauthorizedError('Invalid credentials');
+  return user;
+}
+
+export async function findUserById(id: number) {
+  const user = await findById(id);
+  if (!user) throw notFoundError('User not found');
+
   return user;
 }
