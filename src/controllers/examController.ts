@@ -3,11 +3,12 @@ import {
   sendExam,
   showExamDisciplineService,
   showExamTeacherService,
+  existingExam,
 } from '../services/examService';
 
 export async function createExam(req: Request, res: Response) {
   const exam = req.body;
-
+  await existingExam(exam);
   await sendExam(exam);
   res.sendStatus(201);
 }

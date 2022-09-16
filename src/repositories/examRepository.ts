@@ -13,6 +13,18 @@ export async function insertExam(exam: ICreateExam) {
   });
 }
 
+export async function findCategoryById(id: number) {
+  return prisma.categories.findUnique({
+    where: { id },
+  });
+}
+
+export async function findTeacherDisciplineById(id: number) {
+  return prisma.teachersDisciplines.findUnique({
+    where: { id },
+  });
+}
+
 export async function showExamByDiscipline() {
   return await prisma.terms.findMany({
     select: {
