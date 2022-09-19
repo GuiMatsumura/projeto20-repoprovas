@@ -1,4 +1,4 @@
-# <p align = "center"> Projeto X </p>
+# <p align = "center"> RepoProvas </p>
 
 <p align = "center">
    <img src="https://img.shields.io/badge/author-Guilherme_Matsumura-4dae71?style=flat-square" />
@@ -51,8 +51,8 @@ POST /exam (autenticada)
     - body: {
     "name": "NOME",
     "pdfUrl": "URL_DO_PDF",
-    "categoryId": ID,
-    "teacherDisciplineId": ID
+    "categoryId": CATEGORY_ID,
+    "teacherDisciplineId": TEACHER_DISCIPLINE_ID
     }
 ```
 
@@ -64,7 +64,7 @@ GET /exam/discipline (autenticada)
 ```
 
 ```yml
-PUT /usuarios/teacher (autenticada)
+GET /usuarios/teacher (autenticada)
     - Rota para listar as provas por professor
     - headers: { "Authorization": "Bearer $token" }
     - body: {}
