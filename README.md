@@ -39,8 +39,8 @@ POST /signin
     - Rota para fazer login
     - headers: {}
     - body: {
-    "email": "SEU_EMAIL@gmail.com",
-    "password": "SUA_SENHA"
+        "email": "SEU_EMAIL@gmail.com",
+        "password": "SUA_SENHA"
     }
 ```
 
@@ -49,10 +49,10 @@ POST /exam (autenticada)
     - Rota para cadastrar uma prova
     - headers: { "Authorization": "Bearer $token" }
     - body: {
-    "name": "NOME",
-    "pdfUrl": "URL_DO_PDF",
-    "categoryId": CATEGORY_ID,
-    "teacherDisciplineId": TEACHER_DISCIPLINE_ID
+        "name": "NOME",
+        "pdfUrl": "URL_DO_PDF",
+        "categoryId": CATEGORY_ID,
+        "teacherDisciplineId": TEACHER_DISCIPLINE_ID
     }
 ```
 
