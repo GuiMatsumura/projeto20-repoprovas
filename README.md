@@ -27,11 +27,11 @@ O RepoProvas é um sistema de compartilhamento de provas entre estudantes! No Re
 POST /signup
     - Rota para cadastrar um novo usuário
     - headers: {}
-    - body:{
+    - body: {
         "email": "SEU_EMAIL@gmail.com",
         "password": "SUA_SENHA",
         "confirmPassword": "SUA_SENHA"
-}
+        }
 ```
 
 ```yml
